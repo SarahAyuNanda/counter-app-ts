@@ -1,0 +1,7 @@
+const ACTIONS = {
+  INCREMENT: 'INCREMENT',
+  DECREMENT: 'DECREMENT',
+  RESET: 'RESET'
+}
+
+export default ACTIONS
