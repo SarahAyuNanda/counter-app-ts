@@ -1,5 +1,6 @@
 import PrimaryButton from "../components/buttons/primary-button";
 import SecondaryButton from "../components/buttons/secondary-button";
+import './index.css';
 
 const App = () => {
   const onClickDecrement = () => console.log('decrement');

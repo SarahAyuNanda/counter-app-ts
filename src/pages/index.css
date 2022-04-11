@@ -1,0 +1,19 @@
+.main-page {
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-content, .counter-result {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 0;
+}
+
+.counter-result {
+  margin: 0 1rem;
+  width: 100px;
+  justify-content: center;
+  align-items: center;
+}
