@@ -1,0 +1,19 @@
+#secondary-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 45px;
+  font: 16px 'Montserrat';
+  color: var(--black);
+  background: var(--white);
+  border: 1.5px solid var(--orange);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+#secondary-button:hover {
+  background: var(--orange);
+  color: var(--white);
+}
