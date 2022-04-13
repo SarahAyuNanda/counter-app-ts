@@ -5,7 +5,7 @@
   width: 100px;
   height: 45px;
   font: 16px 'Montserrat';
-  color: var(--black);
+  color: var(--orange);
   background: var(--white);
   border: 1.5px solid var(--orange);
   border-radius: 5px;
@@ -16,4 +16,10 @@
 #secondary-button:hover {
   background: var(--orange);
   color: var(--white);
+}
+
+#secondary-button:disabled {
+  border: 1.5px solid var(--black-shadow);
+  color: var(--black-shadow);
+  background: var(--white);
 }

@@ -9,6 +9,8 @@ import './index.css';
 const App = () => {
   const dispatch = useDispatch();
   const counter = useSelector((state: IAppState) => state.counter);
+
+  const disableReset = counter.number === 0 && true;
   
   const onClickDecrement = () => dispatch(Action.decrement());
   const onClickIncrement = () => dispatch(Action.increment());
@@ -22,7 +24,7 @@ const App = () => {
         <p className='counter-result'>{counter.number}</p>
         <PrimaryButton label={CONSTANTS.SYMBOL.PLUS} handler={onClickIncrement} />
       </div>
-      <SecondaryButton label={CONSTANTS.DESCRIPTION.RESET} handler={onClickReset} />
+      <SecondaryButton label={CONSTANTS.DESCRIPTION.RESET} handler={onClickReset} disabled={disableReset} />
     </div>
   );
 };
