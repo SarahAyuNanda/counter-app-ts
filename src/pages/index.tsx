@@ -10,7 +10,7 @@ const App = () => {
   const dispatch = useDispatch();
   const counter = useSelector((state: IAppState) => state.counter);
 
-  const disableReset = counter.number === 0 && true;
+  const disableReset = counter.number === 0;
   
   const onClickDecrement = () => dispatch(Action.decrement());
   const onClickIncrement = () => dispatch(Action.increment());
