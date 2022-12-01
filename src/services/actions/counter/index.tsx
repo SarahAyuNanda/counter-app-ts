@@ -1,20 +1,26 @@
-import ACTIONS from "../../constants/actionTypes";
-import { IAction } from "../../models";
+import ACTIONS from "services/constants/actionTypes";
+import { IAction } from "services/models";
 
-export const decrement = (): IAction => (
+const decrement = (): IAction => (
   {
     type: ACTIONS.DECREMENT
   }
 )
 
-export const increment = (): IAction => (
+const increment = (): IAction => (
   {
     type: ACTIONS.INCREMENT
   }
 )
 
-export const reset = (): IAction => (
+const reset = (): IAction => (
   {
     type: ACTIONS.RESET
   }
 )
+
+export {
+  decrement,
+  increment,
+  reset,
+}

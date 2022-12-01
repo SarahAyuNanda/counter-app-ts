@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import BaseButton from "../components/buttons/BaseButton";
-import CONSTANTS from "../services/constants";
-import { IAppState } from "../services/models";
-import * as Action from "../services/actions/counter"
+import BaseButton from "components/buttons/BaseButton";
+import { IAppState } from "services/models";
+import CONSTANTS from "services/constants";
+import * as Action from "services/actions/counter"
 import './index.css';
 
 const App = () => {

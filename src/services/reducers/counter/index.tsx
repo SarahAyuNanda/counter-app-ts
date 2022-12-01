@@ -1,6 +1,7 @@
-import ACTIONS from "../../constants/actionTypes";
-import { IAction } from "../../models"
-import { ICounterState } from "../../models/counter"
+import ACTIONS from "services/constants/actionTypes"
+import { IAction } from "services/models"
+import { ICounterState } from "services/models/counter"
+
 
 const initialState: ICounterState = {
   number: 0
