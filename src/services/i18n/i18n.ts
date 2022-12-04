@@ -5,6 +5,8 @@ import { initReactI18next } from "react-i18next";
 import enTranslation from "services/i18n/locales/en.json";
 import idTranslation from "services/i18n/locales/id.json";
 
+export type languages = 'en' | 'id';
+
 const resources = {
   en: {
     translation: enTranslation

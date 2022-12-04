@@ -1,6 +1,9 @@
 {
   "counter": "Counter",
   "reset": "Reset",
+  "en": "en",
+  "id": "id",
+
   "notation.plus": "+",
   "notation.minus": "-"
 }

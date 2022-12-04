@@ -1,3 +1,9 @@
 {
+  "counter": "Penghitung",
+  "reset": "Atur Ulang",
+  "en": "en",
+  "id": "id",
   
+  "notation.plus": "+",
+  "notation.minus": "-"
 }
