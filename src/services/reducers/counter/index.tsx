@@ -1,4 +1,4 @@
-import ACTIONS from "services/constants/actionTypes"
+import ACTION from "services/constants/actionTypes"
 import { IAction } from "services/models"
 import { ICounterState } from "services/models/counter"
 
@@ -9,17 +9,17 @@ const initialState: ICounterState = {
 
 const counter = (state: ICounterState = initialState, action: IAction): ICounterState => {
   switch (action.type) {
-    case ACTIONS.DECREMENT:
+    case ACTION.DECREMENT:
       return {
         ...state,
         number: --state.number
       }
-    case ACTIONS.INCREMENT:
+    case ACTION.INCREMENT:
       return {
         ...state,
         number: ++state.number
       }
-    case ACTIONS.RESET:
+    case ACTION.RESET:
       return {
         ...state,
         number: 0
