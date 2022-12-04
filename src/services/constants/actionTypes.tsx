@@ -1,7 +1,0 @@
-const ACTION = {
-  INCREMENT: 'INCREMENT',
-  DECREMENT: 'DECREMENT',
-  RESET: 'RESET'
-}
-
-export default ACTION

@@ -1,32 +1,24 @@
-import ACTION from "services/constants/actionTypes"
-import { IAction } from "services/models"
+import { createSlice } from "@reduxjs/toolkit"
 import { ICounterState } from "services/models/counter"
-
 
 const initialState: ICounterState = {
   number: 0
 }
 
-const counter = (state: ICounterState = initialState, action: IAction): ICounterState => {
-  switch (action.type) {
-    case ACTION.DECREMENT:
-      return {
-        ...state,
-        number: --state.number
-      }
-    case ACTION.INCREMENT:
-      return {
-        ...state,
-        number: ++state.number
-      }
-    case ACTION.RESET:
-      return {
-        ...state,
-        number: 0
-      }
-    default:
-      return state
+export const counter = createSlice({
+  name: 'counter',
+  initialState,
+  reducers: {
+    increment: (state: ICounterState) => {
+      state.number = state.number + 1;
+    },
+    decrement: (state: ICounterState) => {
+      state.number = state.number - 1;
+    },
+    reset: () => initialState
   }
-}
+})
 
-export default counter
+export const { increment, decrement, reset } = counter.actions;
+
+export default counter.reducer;

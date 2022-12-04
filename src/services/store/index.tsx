@@ -1,10 +1,11 @@
-import { createStore } from "redux"
-import { composeWithDevTools } from "redux-devtools-extension"
-import rootReducer from "services/reducers/rootReducer"
+import { configureStore } from "@reduxjs/toolkit"
+import counter from "services/reducers/counter"
 
-const store = createStore(
-  rootReducer,
-  composeWithDevTools()
-)
+const store = configureStore({
+  reducer: {
+    counter: counter
+  },
+  devTools: process.env.NODE_ENV === 'development'
+})
 
 export default store
