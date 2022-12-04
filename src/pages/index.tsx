@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
-import BaseButton from "components/buttons/BaseButton";
+import BaseButton from "components/button/BaseButton";
+import LanguageToggle from "components/toggle/LanguageToggle";
 import { IAppState } from "services/models";
-import CONSTANTS from "services/constants";
 import * as Action from "services/actions/counter"
 import './index.css';
 
@@ -19,6 +19,7 @@ const App = () => {
 
   return (
     <div className='main-page'>
+      <LanguageToggle />
       <h2>{t('counter')}</h2>
       <div className='main-content'>
         <BaseButton label={t('notation.minus')} onClick={onClickDecrement} variant={'primary'} />

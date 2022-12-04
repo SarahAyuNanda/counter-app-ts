@@ -1,0 +1,90 @@
+.switch {
+  position: absolute;
+  top: 2rem;
+  right: 1.5rem;
+}
+
+.switch > span {
+  position: absolute;
+  top: 12px;
+  pointer-events: none;
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 var(--black-shadow);
+  width: 50%;
+  text-align: center;
+}
+
+input.check-toggle-round:checked ~ .id {
+  color: var(--white);
+}
+
+input.check-toggle-round:checked ~ .en {
+  color: var(--orange);
+}
+
+.switch > span.id {
+  left: 0;
+  padding-left: 2px;
+  color: var(--orange);
+}
+
+.switch > span.en {
+  right: 0;
+  padding-right: 2px;
+  color: var(--white);
+}
+
+.check-toggle {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+
+.check-toggle + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+input.check-toggle-round + label {
+  padding: 2px;
+  width: 70px;
+  height: 35px;
+  background-color: var(--orange);
+  border-radius: 60px;
+}
+
+input.check-toggle-round + label:before, input.check-toggle-round + label:after {
+  display: block;
+  position: absolute;
+  content: "";
+}
+
+input.check-toggle-round + label:before {
+  top: 3px;
+  left: 3px;
+  bottom: 3px;
+  right: 3px;
+  background-color: var(--orange);
+  border-radius: 60px;
+}
+input.check-toggle-round + label:after {
+  top: 3px;
+  left: 3px;
+  bottom: 3px;
+  width: 35px;
+  background-color: var(--white);
+  border-radius: 60px;
+  transition: margin 0.3s;
+}
+
+/* input.check-toggle-round:checked + label {
+} */
+
+input.check-toggle-round:checked + label:after {
+  margin-left: 33px;
+}
