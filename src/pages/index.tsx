@@ -1,30 +1,34 @@
-import { useDispatch, useSelector } from "react-redux";
-import PrimaryButton from "../components/buttons/primary-button";
-import SecondaryButton from "../components/buttons/secondary-button";
-import CONSTANTS from "../services/constants";
-import { IAppState } from "../services/models";
-import * as Action from "../services/actions/counter"
+import { useTranslation } from "react-i18next";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import BaseButton from "components/button/BaseButton";
+import LanguageToggle from "components/toggle/LanguageToggle";
+import { IAppState } from "services/models";
+import { decrement, increment, reset } from "services/reducers/counter";
 import './index.css';
 
 const App = () => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
-  const counter = useSelector((state: IAppState) => state.counter);
+  const { number } = useSelector(({ counter }: IAppState) => ({
+    number: counter.number
+  }), shallowEqual);
 
-  const disableReset = counter.number === 0;
-  
-  const onClickDecrement = () => dispatch(Action.decrement());
-  const onClickIncrement = () => dispatch(Action.increment());
-  const onClickReset = () => dispatch(Action.reset());
+  const disableReset = number === 0;
+
+  const onClickDecrement = () => dispatch(decrement());
+  const onClickIncrement = () => dispatch(increment());
+  const onClickReset = () => dispatch(reset());
 
   return (
     <div className='main-page'>
-      <h2>{CONSTANTS.TITLE.COUNTER}</h2>
+      <LanguageToggle />
+      <h2>{t('counter')}</h2>
       <div className='main-content'>
-        <PrimaryButton label={CONSTANTS.SYMBOL.MINUS} handler={onClickDecrement} />
-        <p className='counter-result'>{counter.number}</p>
-        <PrimaryButton label={CONSTANTS.SYMBOL.PLUS} handler={onClickIncrement} />
+        <BaseButton label={t('notation.minus')} onClick={onClickDecrement} variant={'primary'} />
+        <p className='counter-result'>{number}</p>
+        <BaseButton label={t('notation.plus')} onClick={onClickIncrement} variant={'primary'} />
       </div>
-      <SecondaryButton label={CONSTANTS.DESCRIPTION.RESET} handler={onClickReset} disabled={disableReset} />
+      <BaseButton label={t('reset')} onClick={onClickReset} variant={'secondary'} disabled={disableReset} />
     </div>
   );
 };
